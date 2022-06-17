@@ -24,9 +24,12 @@ app.post('/insertOrder', async(req, res) => {
 });
 
 app.get('/listOrders', async (req, res) => {
-    const result = await db.many('SELECT * FROM orders;');
-    console.log(result);
-    res.status(200).json(result);
+    try{
+        const result = await db.many('SELECT * FROM orders;');
+        res.status(200).json(result);
+    }catch (error){
+        res.status(404).json('No results');
+    }
 });
 
 app.delete('/deliver/:id', async(req, res) => {

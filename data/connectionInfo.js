@@ -1,6 +1,6 @@
 
 const connectionInfo = {
-    host: "localhost",
+    host: "fast-fast-container-postgres-1",
     user: "postgres",
     password: "postgres",
     database: "public",
